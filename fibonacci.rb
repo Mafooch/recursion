@@ -22,3 +22,22 @@ def fib_iter(n)
   curr_num
 end
 puts fib_iter(1000)
+
+###############################
+#another non-recursive example#
+###############################
+
+def fibonacci(num)
+  sequence = []
+
+  (0..num).each do |n|
+    if n < 2
+      sequence << n
+    else
+      sequence << sequence[-1] + sequence[-2]
+    end
+  end
+  sequence.last
+end
+
+puts fibonacci(6) # => 8
